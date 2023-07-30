@@ -17,3 +17,7 @@ export async function getAccountTypes<T>() : Promise<T[]> {
     const response = await fetchData<{}, T[]>(accountsUrl + "?only=account_type");
     return response;
 }
+
+export async function getClientInfos() {
+    const response = await fetchData("http://localhost:8000/api/clients?join=transactions")
+}

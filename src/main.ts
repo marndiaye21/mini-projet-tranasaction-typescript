@@ -1,12 +1,16 @@
 import { transactionTypes, accountTypes } from "./database/database";
 import { loadAccountTypes, loadSearchedAccounts, loadTransactionTypes } from "./helpers/utils";
 
+console.log("bong");
+
 const senderControl = {
     senderInput: document.querySelector('#sender') as HTMLInputElement,
     senderFullname: document.querySelector('#sender-fullname') as HTMLInputElement,
     accountNumberContainer: document.querySelector("#account-number-container") as HTMLDivElement,
     senderTitle: document.querySelector('#sender-title') as HTMLElement
 }
+
+const aboutAccountIcon = document.querySelector('#about-account-icon');
 
 const senderInput = document.querySelector('#sender') as HTMLInputElement;
 const receiverInput = document.querySelector('#receiver') as HTMLInputElement;
@@ -53,6 +57,11 @@ receiverInput?.addEventListener('input', function () {
 
     loadSearchedAccounts(this.value, receiverAccountNumberContainer, this, receiverFullname, receiverTitle)
 })
+
+aboutAccountIcon?.addEventListener('click', () => {
+    const modalContainer = document.querySelector('.modal-container') as HTMLElement
+    modalContainer.classList.remove('hidden');
+});
 
 typeTransaction.addEventListener('change', function() {
     const transactionTypeId = this.selectedOptions[0].getAttribute('data-id');

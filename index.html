@@ -8,7 +8,37 @@
     <script src="./dist/main.js" type="module"></script>
 </head>
 <body>
-    <section class="bg-gray-50 h-screen">
+    <div class="modal-container w-full h-screen absolute flex items-center justify-center z-10 bg-black/50 hidden">
+        <div class="modal w-2/5 rounded bg-white h-[500px] px-6">
+            <div class="modal-header py-8 text-center font-medium text-2xl">
+                Informatique sur le compte : <span class="font-semibold">CV_789980965</span>
+            </div>
+            <div class="modal-body py-3">
+                <div class="info-container grid grid-cols-2">
+                    <span class="font-semibold">Propriétaire: </span>
+                    <span>Usher Blow</span>
+                </div>
+
+                <div class="info-container grid grid-cols-2">
+                    <span class="font-semibold">Solde: </span>
+                    <span>3500 F</span>
+                </div>
+
+                <div class="info-container grid grid-cols-2">
+                    <span class="font-semibold">Date de création: </span>
+                    <span>17/06/2019</span>
+                </div>
+
+                <div class="info-container grid grid-cols-2">
+                    <span class="font-semibold">Date de création: </span>
+                    <span>17/06/2019</span>
+                </div>
+            </div>
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+
+    <section class="bg-gray-50 h-screen relative -z-10">
         <div class="flex flex-col items-center justify-center text-gray-700 px-6 py-8 mx-auto">
             <div class="w-3/4 rounded-lg shadow-lg px-4 pb-3">
                 <div class="flex justify-center items-center mb-8">
@@ -16,9 +46,9 @@
                 </div>
                 <div class="sender">
                     <div class="w-full border-b border-gray-700 pb-3">
-                        <h2 class="bg-green-400 inline-block px-4 py-1 text-white rounded" id="sender-title">Expéditeur</h2>
+                        <h2 class="bg-green-400 inline-block px-4 py-1 font-semibold text-white rounded" id="sender-title">Expéditeur</h2>
                     </div>
-                    <div class="flex px-6 py-8">
+                    <div class="flex px-6 py-8 items-center">
                         <div class="input-group relative flex flex-col mr-20 w-2/6" id="">
                             <label for="sender" class="mb-2">Numéro de compte / Téléphone</label>
                             <input type="text" name="sender" id="sender" class="px-4 py-1 rounded border border-gray-700" placeholder="Ex: WV-786665677 ou 786665677">
@@ -43,12 +73,18 @@
                             <label for="sender-fullname" class="mb-2">Nom complet</label>
                             <input type="text" name="sender-fullname" id="sender-fullname" disabled class="disabled:bg-gray-400/20 px-4 py-1 rounded border border-gray-700" placeholder="John Doe">
                         </div>
+
+                        <div class="w-16 h-16 ml-4 pb-1 flex items-end justify-start" id="about-account-icon">
+                            <svg class="w-7 h-7 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="#2874a6" viewBox="0 0 20 20">
+                                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"/>
+                              </svg>
+                        </div>
                     </div>
                 </div>
 
                 <div class="transaction mt-4">
                     <div class="w-full border-b border-gray-700 pb-3">
-                        <h2 class="bg-blue-400 rounded inline-block px-4 py-1 text-white">Transaction</h2>
+                        <h2 class="bg-blue-400 rounded inline-block px-4 py-1 font-semibold text-white">Transaction</h2>
                     </div>
                     <div class="flex flex-col px-6 py-8">
                         <div class="input-group flex flex-col w-2/6">
@@ -75,7 +111,7 @@
 
                 <div class="receiver" id="receiver-container">
                     <div class="w-full border-b border-gray-700 pb-3">
-                        <h2 class="bg-blue-400 inline-block px-4 py-1 rounded text-white" id="receiver-title">Destinataire</h2>
+                        <h2 class="bg-blue-400 inline-block px-4 py-1 rounded font-semibold text-white" id="receiver-title">Destinataire</h2>
                     </div>
                     <div class="flex px-6 py-8">
                         <div class="input-group flex flex-col mr-20 w-2/6 relative">
